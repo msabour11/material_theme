@@ -1,0 +1,69 @@
+/* Container in the navbar */
+#custom-lang-switch {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  height: 100%;
+}
+
+/* The background pill */
+.lang-toggle-container {
+  position: relative;
+  width: 70px;
+  height: 32px;
+  background-color: var(--control-bg, #f0f4f7);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color, #d1d8dd);
+}
+
+.lang-toggle-container:hover {
+  border-color: var(--primary, #5e64ff);
+}
+
+/* The Text Labels (EN / ع) */
+.lang-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted, #8d99a6);
+  z-index: 2;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.lang-label.active {
+  color: white;
+}
+
+/* The Sliding Circle/Pill */
+.lang-toggle-pill {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 34px;
+  height: 24px;
+  background-color: var(--primary, #5e64ff);
+  border-radius: 20px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* State: Arabic Active (Slide Right) */
+.lang-toggle-pill.active-ar {
+  transform: translateX(30px); /* Slide to the right */
+  background-color: #28a745; /* Optional: Green for Arabic, or keep Primary */
+}
+
+/* Dark Mode Support (Optional adjustments) */
+[data-theme="dark"] .lang-toggle-container {
+  background-color: #35363a;
+  border-color: #484a4f;
+}

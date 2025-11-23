@@ -25,12 +25,31 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = ["/assets/material_theme/css/material.css",
-                   ]
+app_include_css = [
+    "/assets/material_theme/css/material.css",
+    "/assets/material_theme/css/language_switcher.css",
+]
 app_include_js = [
-                    "/assets/material_theme/js/material.js",
-                    "/assets/material_theme/js/material-theme-customizer.js",
-                    "/assets/material_theme/js/theme.js",]
+    "/assets/material_theme/js/material.js",
+    "/assets/material_theme/js/material-theme-customizer.js",
+    "/assets/material_theme/js/theme.js",
+    "/assets/material_theme/js/language_switcher.js",
+]
+
+fixtures = [
+    {
+        "dt": "Property Setter",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "User-desk_theme-options",
+                ],
+            ]
+        ],
+    }
+]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/material_theme/css/material_theme.css"
@@ -246,4 +265,3 @@ override_whitelisted_methods = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
